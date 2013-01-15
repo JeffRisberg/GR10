@@ -1,0 +1,6 @@
+target
+web-app/WEB-INF/classes
+testDb.*
+*.log
+
+
