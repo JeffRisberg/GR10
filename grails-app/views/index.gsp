@@ -19,7 +19,7 @@
       <div class="content">
 
         <div id="todoCategories">
-          <ul id="todoCategories-list" style="list-style-type: square"></ul>
+          <select id="todoCategories-list" style="list-style-type: square"></select>
         </div>
 
         <div id="create-todo">
@@ -68,11 +68,7 @@
     </script>
     
     <script type="text/template" id="category-template">
-      <div class="todoCategory-name">
-        <a href="#">
-        {{ name }} 
-        </a>
-      </div>
+      {{name}}
     </script>
 
   </body>

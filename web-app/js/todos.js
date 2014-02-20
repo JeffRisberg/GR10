@@ -162,8 +162,8 @@ $(function(){
   alert("creating TodoCategoryView view");
   window.TodoCategoryView = Backbone.View.extend({
 
-    tagName: "li",
-
+    tagName: "option",
+       
     // Cache the template function for a single item.
     template: _.template($('#category-template').html()),
 
@@ -173,6 +173,7 @@ $(function(){
     
     // Re-render the contents of the todoCategory.
     render: function() {
+      $(this.el).attr({value: this.model.get('id')});
       $(this.el).append(this.template(this.model.toJSON()));
       return this;
     },
@@ -214,8 +215,8 @@ $(function(){
      
       TodoCategories.bind('reset', this.addAllCategories, this);
       
-      Todos.fetch();
-      TodoCategories.fetch();
+      Todos.fetch({reset: true});
+      TodoCategories.fetch({reset: true});
     },
 
     // Re-rendering the App just means refreshing the statistics -- the rest
@@ -239,7 +240,7 @@ $(function(){
       $("#todoCategories-list").append(view.render().el);
     },
     
-    // Add all items in the **Todos** collection at once.
+    // Add all items in the **TodoCategories** collection at once.
     addAllCategories: function() {
       TodoCategories.each(this.addCategory);
     },
