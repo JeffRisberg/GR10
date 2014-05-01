@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>Backbone Demo: Todos</title>   
+    <title>GR10</title>   
     <meta name="layout" content="main">
     <script type="text/javascript" src="<g:createLinkTo dir='js' file='todos.js' />" ></script>    
   </head>
